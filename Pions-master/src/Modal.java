@@ -37,11 +37,26 @@ public class Modal implements Gestion{
 	}
 
 	//Permet de mettre l'id du joueur sur la case qu'il a selectionnée
-	public void placePoint(int id, int x, int y, int z) {	
+	public void placePion(int id, int x, int y, int z) {	
 
 		Tab[x][y][z]=id;
 	}
 	
+	public void afficheTab(int [][] tab ) {
+		int longueur = tab.length;
+		
+		for (int x = 0; x < longueur; x++) {
+			for ( int y = 0; y < longueur; y++) {
+			System.out.println(tab[x][y]);
+			}
+			System.out.println("\n");
+		}
+	}
+	
+	public int backupTab(int [][] tab ) {
+		int [][] oldtab = tab.clone();
+		return oldtab;
+	}
 	
 	
 
